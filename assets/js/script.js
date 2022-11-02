@@ -4,4 +4,12 @@
 
 var searchCity = document.getElementById("#search-city");
 var startSearch = document.getElementById("#search-button");
-var serachHistory = [];
+var historyStored = document.getElementById("#history");
+
+var searchForTheCity ="";
+var historyOfTheCity =[];
+
+startSearch.addEventListener("click", function (e){
+    e.preventDefault();
+ 
+})
