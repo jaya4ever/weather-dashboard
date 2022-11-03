@@ -6,7 +6,7 @@
 var currentDay = moment().format("h:mm:ss a");
 
 var searchCity = document.getElementById("#search-city");
-var startSearch = document.getElementById("#search-button");
+var startSearch = document.getElementById("#search");
 var historyStored = document.getElementById("#history");
 
 var searchForTheCity ="";
@@ -29,11 +29,11 @@ function weatherList(){
     }
 }
 
-function fetchData(searchForTheCity){
+function fetchData(){
     var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&appid=${apiKey}`)
     .then(response => response.json())
-        .then(geoData => {
+    .then(geoData => {
             return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=${apiKey}&exclude=hourly,minutely&units=imperial`)
     })
     .then(response => response.json())
@@ -41,9 +41,9 @@ function fetchData(searchForTheCity){
 
        
 
-        pullCurrentData( searchForTheCity);
-        futureData();
-
+        //pullCurrentData(cityData, searchForTheCity);
+        //futureData(cityData);
+  console.log(cityData);
     })
 
 }
