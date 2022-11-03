@@ -2,7 +2,7 @@
 //look for click search button
 //look for history stored after user search
 
-var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
+//var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
 var currentDay = moment().format("h:mm:ss a");
 
 var searchCity = document.getElementById("#search-city");
@@ -27,6 +27,25 @@ function weatherList(){
     if(storedWeather !==null){
         searchForTheCity = storedWeather;
     }
+}
+
+function fetchData(searchForTheCity){
+    var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&appid=${apiKey}`)
+    .then(response => response.json())
+        .then(geoData => {
+            return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=${apiKey}&exclude=hourly,minutely&units=imperial`)
+    })
+    .then(response => response.json())
+    .then(cityData => {
+
+       
+
+        pullCurrentData( searchForTheCity);
+        futureData();
+
+    })
+
 }
 
 startSearch.addEventListener("click", function (event){
