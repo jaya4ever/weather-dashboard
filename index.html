@@ -26,10 +26,33 @@
                     <input id="city" type="text">
                    <button id="search-button" class="btn btn-block btn-primary">Search</button>
                     </div>
+              
                 </div>
                 <div id="history" class="stored"></div>
-                
-            </section>
+                <div class="col-lg-9">
+                    <div class="row mr-0">
+                        <div class="col-lg-11 card m-3 d-none" id="today-weather">
+                            <div class="card-body">
+                                <h3 id="city-name" class="city-name align-middle"></h3>
+                                <img id="current-pic" alt="">
+                                <p id="temperature"></p>
+                                <p id="humidity-level"></p>
+                                <p id="wind"></p>
+                                <p id="UV-index"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-none" id="fiveday-header">
+                        <div class="col-12">
+                            <h3>5-Day Forecast</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+                    
+                </section>
             
         </div>
     </main>

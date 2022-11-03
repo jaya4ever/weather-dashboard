@@ -3,7 +3,7 @@
 //look for history stored after user search
 
 var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
-var currentDay = moment().format();
+var currentDay = moment().format("h:mm:ss a");
 
 var searchCity = document.getElementById("#search-city");
 var startSearch = document.getElementById("#search-button");
