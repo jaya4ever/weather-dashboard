@@ -61,11 +61,11 @@ startSearch.addEventListener("click", function (event){
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity.value}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
     .then(response => response.json())
     .then(geoData => {
-        //console.log(geoData);
+       // console.log(geoData);
        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
         .then(response => response.json())
         .then(weatherData => {
-            console.log(weatherData);
+            //console.log(weatherData);
             var weatherList = weatherData.list;
             //console.log(weatherList);
             for(var i=0; i < 5; i++ ){
