@@ -15,10 +15,10 @@ var historyOfTheCity =[];
 
 // pulls the city array from the local storage
 function cityList(){
-    var searchedCities = Json.parse(localStorage.getItem("CityList"));
+    var searchedCities = Json.parse(localStorage.getItem("City"));
     if(searchedCities !== null){
         historyOfTheCity = searchedCities;
-        //localStorage.setItem("CityList", JSON.stringify(searchedCities));
+       
     }
     
 }
@@ -27,8 +27,10 @@ function weatherList(){
     var storedWeather = Json.parse(localStorage.getItem("currentCity"));
     if(storedWeather !==null){
         searchForTheCity = storedWeather;
+        
     }
 }
+
 
 /*function fetchData(){
     var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
@@ -54,6 +56,7 @@ https://api.openweathermap.org/data/2.5/forecast?lat=42.3554334&lon=-71.060511&a
 
 startSearch.addEventListener("click", function (event){
     event.preventDefault();
+    
     //fetchData();
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity.value}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
     .then(response => response.json())
@@ -66,12 +69,13 @@ startSearch.addEventListener("click", function (event){
             var weatherList = weatherData.list;
             //console.log(weatherList);
             for(var i=0; i < 5; i++ ){
-                
+
             }
 
         })
         //console.log(geoData[0].lat);
         //console.log(geoData[0].lon);
     })
+
  
 })
