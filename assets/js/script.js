@@ -14,10 +14,12 @@ var historyOfTheCity =[];
 
 // pulls the city array from the local storage
 function cityList(){
-    var storedCities = Json.parse(localStorage.getItem("cities"));
-    if(storedCities !== null){
-        historyOfTheCity = storedCities;
+    var searchedCities = Json.parse(localStorage.getItem("CityList"));
+    if(searchedCities !== null){
+        historyOfTheCity = searchedCities;
+        //localStorage.setItem("CityList", JSON.stringify(searchedCities));
     }
+    
 }
 
 function weatherList(){
