@@ -22,7 +22,7 @@ function cityList() {
     }
 
 }
-historySaved();
+
 
 /*function weatherList() {
     var storedWeather = Json.parse(localStorage.getItem("currentCity"));
@@ -46,15 +46,15 @@ startSearch.addEventListener("click", function (event) {
     //fetchData();
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity.value}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
         .then(response => response.json())
-        .then(cityData => {
-            // console.log(geoData);
+        .then(geoData => {
+            console.log(geoData);
             fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
                 .then(response => response.json())
                 .then(weatherData => {
                     console.log(weatherData);
                   
                     //console.log(weatherList);
-                    console.log(cityData);
+                    //console.log(cityData);
 
                 })
             console.log(geoData[0].lat);
@@ -70,7 +70,7 @@ function startFunction(){
     console.log(searchCity.value);
 
     historyOfTheCity.push(searchCity.value);
-    localStorage.setItem("searchedCities". JSON.stringify(historyOfTheCity))
+    localStorage.setItem("searchedCities", JSON.stringify(historyOfTheCity));
 
 
 }
@@ -78,7 +78,11 @@ function startFunction(){
 function historySaved(){
     historyStored.innerHTML ="";
     for (var i = 0; i < historyOfTheCity.length; i++){
+        var savedButton = document.getElementById("button");
         
+    
+        
+
     }
 }
 
