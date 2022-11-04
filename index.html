@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
 </head>
 
@@ -18,54 +18,45 @@
 
 <body>
     <header>Weather Dashboard</header>
-   
+
     <main class="container">
         <div class="row">
-            <section class="col-12 col-md-3 col-lg-3 my-4">
-                <div class="card custom-card">
-                    <h3 id="search-city" class="card-header">Search for a City</h3>
-                    <input id="city" type="text">
-                    <button id="search" class="btn btn-block btn-primary">Search</button> 
+            <section class="col-md-3 my-4">
+                <div class="card custom-card mb-2">
+                    <label for="city">Search for a City:</label>
+                    <input id="city" type="text" name="city" class="mb-2">
+                    <button id="search" class="btn btn-block btn-primary">Search</button>
                 </div>
+                <hr />
+                <div id="history" class="center"></div>
 
-      
-    </section>
-</div>
-        <div id="history" class="center"></div>
-        
 
-        <section class="col-12 col-md-9 col-lg-9 my-4">
-            <div class="col-lg-9">
-                <div class="row mr-0">
-                    <div class="col-lg-11 card m-3 d-none" id="today-weather">
-                        <div class="card-body">
-                            <h3 id="city-name" class="city-name align-middle"></h3>
-                            <img id="current-pic" alt="">
-                            <p id="temperature"></p>
-                            <p id="humidity-level"></p>
-                            <p id="wind"></p>
-                            <p id="UV-index"></p>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <section class="row">
-            <h3>5-Day Forecast</h3>
-             <p id="fiveday-header" class=""></p>
-            <div id="futureCity" class="flex justify-content"></div>
-               </section>
+            </section>
+            <div>
+                <section class="col-md-9" id="today-weather">
+                    <!-- <div class="card w-100" >
+                            <div class="card-body">
+                                <h3 id="city-name" class="card-title">CITY:</h3>
+                                <img id="current-pic" alt="" src="">
+                                <p id="temperature" class="card-text">temp</p>
+                                <p id="humidity-level" class="card-text">humidity</p>
+                                <p id="wind" class="card-text">wind</p>
+                            </div>
+                        </div> -->
+                </section>
+                <section class="row" id="forecast">
+                    <!-- <h3>5-Day Forecast</h3>
+                    <div id="futureCity" class="flex justify-content">
+
+                    </div> -->
+                </section>
             </div>
-        
+        </div>
 
-        
-
-
-
-        
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
