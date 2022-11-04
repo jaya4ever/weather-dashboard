@@ -10,26 +10,57 @@ var startSearch = document.getElementById("search");
 var historyStored = document.getElementById("history");
 
 
-var searchForTheCity ="";
-var historyOfTheCity =[];
+var searchForTheCity = "";
+var historyOfTheCity = [];
 
 // pulls the city array from the local storage
-function cityList(){
+function cityList() {
     var searchedCities = Json.parse(localStorage.getItem("City"));
-    if(searchedCities !== null){
+    if (searchedCities !== null) {
         historyOfTheCity = searchedCities;
-       
+
     }
-    
+
 }
 
-function weatherList(){
+function weatherList() {
     var storedWeather = Json.parse(localStorage.getItem("currentCity"));
-    if(storedWeather !==null){
+    if (storedWeather !== null) {
         searchForTheCity = storedWeather;
-        
+
     }
 }
+
+
+
+
+startSearch.addEventListener("click", function (event) {
+    
+    event.preventDefault();
+
+    
+    //fetchData();
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity.value}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
+        .then(response => response.json())
+        .then(geoData => {
+            // console.log(geoData);
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
+                .then(response => response.json())
+                .then(weatherData => {
+                    console.log(weatherData);
+                    var weatherList = weatherData.list;
+                    //console.log(weatherList);
+                    for (var i = 0; i < 5; i++) {
+
+                    }
+
+                })
+            console.log(geoData[0].lat);
+            console.log(geoData[0].lon);
+        })
+
+
+})
 
 
 /*function fetchData(){
@@ -53,29 +84,3 @@ https://api.openweathermap.org/data/2.5/forecast?lat=42.3554334&lon=-71.060511&a
     })
 
 }*/
-
-startSearch.addEventListener("click", function (event){
-    event.preventDefault();
-    
-    //fetchData();
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity.value}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
-    .then(response => response.json())
-    .then(geoData => {
-       // console.log(geoData);
-       fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
-        .then(response => response.json())
-        .then(weatherData => {
-            //console.log(weatherData);
-            var weatherList = weatherData.list;
-            //console.log(weatherList);
-            for(var i=0; i < 5; i++ ){
-
-            }
-
-        })
-        //console.log(geoData[0].lat);
-        //console.log(geoData[0].lon);
-    })
-
- 
-})
