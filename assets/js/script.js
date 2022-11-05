@@ -8,13 +8,11 @@ var currentDay = moment().format("h:mm:ss a");
 var searchCity = document.getElementById("city");
 var startSearch = document.getElementById("search");
 var historyStored = document.getElementById("history");
+var sectionContainer = document.getElementById("container")
 
-var cityInput = document.querySelector('#city-input');
-var city = document.querySelector('#city-name');
 
-var temp = document.querySelector('#temperature');
-var humid = document.querySelector('#humidity');
-var wind = document.querySelector('#wind');
+
+
 
 
 
@@ -40,7 +38,7 @@ var searchForTheCity = "";
     }
 }*/
 function startFunction() {
-    var userInput = searchCity.value;
+    var userInput = searchCity;
     console.log(userInput);
 
     // historyOfTheCity.push(searchCity.value);
@@ -112,7 +110,7 @@ function runForecast(geoData) {
 function historySaved() {
     historyStored.innerHTML = "";
     for (var i = 0; i < historyOfTheCity.length; i++) {
-        var savedButton = document.getElementById("button");
+        var savedButton = document.getElementById("search");
 
 
 
