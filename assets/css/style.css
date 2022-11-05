@@ -1,25 +1,33 @@
-body{
-    
-        font-family: 'Open Sans', sans-serif;
-        font-size: 16px;
-        line-height: 1;
-    
+body {
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  background: #448aff;
 }
 
 
 header {
-    background-color: lightskyblue;
-    color: white;
-    text-align: center;
-    font-family:sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 3rem;
-  }
+  background-color: lightskyblue;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 3rem;
+}
+
 .btn-primary {
-background-color:green;
+  background-color: green;
 
 }
-.card-header:first-child{
-    color:blue
+
+.card-header:first-child {
+  color: blue
+}
+#city-input{
+  padding: .5rem 0 .5rem 0;
+  text-align: center;
+  justify-content: center;
+  background: white;
 }

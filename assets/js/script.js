@@ -8,7 +8,7 @@ var currentDay = moment().format("h:mm:ss a");
 var searchCity = document.getElementById("city");
 var startSearch = document.getElementById("search");
 var historyStored = document.getElementById("history");
-var sectionContainer = document.getElementById("today-weather")
+var sectionContainer = document.getElementById("container")
 
 
 var searchForTheCity = "";
@@ -75,22 +75,18 @@ function runCurrentWeather(geoData){
         var cardText2 = document.createElement('p')
         var cardText3 = document.createElement('p')
       
-         card.textContent =  "card w-100";
-         sectionContainer.append(card);
-
-         cardBody.textContent = "card-body";
-         sectionContainer.append(cardBody);
+         
 
          cardTitle.textContent = "CITY";
          sectionContainer.append(cardTitle);
 
-         cardText.textContent = "Temp";
+         cardText.textContent = "TEMP";
          sectionContainer.append(cardText);
 
-         cardText2.textContent = "humidity";
+         cardText2.textContent = "HUMIDITY";
          sectionContainer.append(cardText2);
 
-         cardText3.textContent = "wind";
+         cardText3.textContent = "WIND";
          sectionContainer.append(cardText3);
 
     })
