@@ -32,9 +32,13 @@ header {
   background: white;
 }
 .display {
+  display: block;
+  padding: .5rem 0 .5rem 0;
   text-align: center;
   width:400px;
   color: blue;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
 
 }
 
