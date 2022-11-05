@@ -67,28 +67,24 @@ function runCurrentWeather(geoData){
     .then(weatherData => {
         console.log('THIS IS CURRENT WEATHER!!!',weatherData);
 
+  //city-Input
+  //city-name
+  //search
+  //temperature
+  //humidity
+  //wind
 
-        var card =  document.createElement('div')
-        var cardBody =  document.createElement('div')
-        var cardTitle = document.createElement('h3')
-        var cardText = document.createElement('p')
-        var cardText2 = document.createElement('p')
-        var cardText3 = document.createElement('p')
+  
+
+
+
+
+        
+        
       
          
 
-         cardTitle.textContent = "CITY";
-         sectionContainer.append(cardTitle);
-
-         cardText.textContent = "TEMP";
-         sectionContainer.append(cardText);
-
-         cardText2.textContent = "HUMIDITY";
-         sectionContainer.append(cardText2);
-
-         cardText3.textContent = "WIND";
-         sectionContainer.append(cardText3);
-
+         
     })
 }
 
