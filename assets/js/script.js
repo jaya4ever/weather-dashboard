@@ -98,6 +98,8 @@ function runForecast(geoData) {
 
             //console.log(weatherList);
             //console.log(cityData);
+            pullCurrentData(weatherData, searchForTheCity);
+            futureData(weatherData);
 
         })
 }
