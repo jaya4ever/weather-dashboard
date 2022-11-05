@@ -20,14 +20,15 @@
     <header>Weather Dashboard</header>
 
     <main class="container">
-        <!-- <div class="row"> -->
-            <section class="col-md-3 my-4">
+        <div class="row">
+        <section class="col-12 col-md-3 col-lg-3 my-4">
                 <div class="card custom-card mb-2">
                     <label for="city">Search for a City:</label>
                     <input id="city-input" type="text" name="city" placeholder="Enter any city..."class="mb-2">
+                    <div class="card-footer"></div>
                     <button id="search" class="btn btn-block btn-primary">Search</button>
                 </div>
-                <hr />
+              
                 <div id="history" class="center"></div>
 
 
@@ -45,13 +46,13 @@
                             </div>
                         </div> 
                 </section>
-                <section id="container"class="row">
-                     <!-- <h3 id="futureHeader" class="my-4">5-Day Forecast</h3> -->
+                <section class="row">
+                     <h3 id="futureHeader" class="my-4">5-Day Forecast</h3>
                     <div id="futureCity" class="d-flex justify-content-around">
 
                     </div> 
                 </section>
-            </div>
+            
         </div>
 
     </main>

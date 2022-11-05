@@ -74,12 +74,7 @@ function runCurrentWeather(geoData) {
         .then(weatherData => {
             console.log('THIS IS CURRENT WEATHER!!!', weatherData);
 
-            //city-Input
-            //city-name
-
-            //temperature
-            //humidity
-            //wind
+            
 
            
 
@@ -91,8 +86,8 @@ function runCurrentWeather(geoData) {
 
 
 
-
         })
+        
 }
 
 
@@ -127,3 +122,4 @@ function historySaved() {
 
 
 startSearch.addEventListener("click", startFunction)
+
