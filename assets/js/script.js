@@ -6,7 +6,7 @@ var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
 var currentDay = moment().format("h:mm:ss a");
 
 var searchCity = document.getElementById("city");
-var startSearch = document.getElementById("search");
+var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
 var sectionContainer = document.getElementById("container")
 
@@ -17,7 +17,7 @@ var sectionContainer = document.getElementById("container")
 
 
 var searchForTheCity = "";
-// var historyOfTheCity = [];
+var historyOfTheCity = [];
 
 // pulls the city array from the local storage
 // function cityList() {
@@ -96,10 +96,12 @@ function runForecast(geoData) {
         .then(weatherData => {
             console.log('THIS IS THE FORECAST!!!', weatherData);
 
-            //console.log(weatherList);
-            //console.log(cityData);
-            pullCurrentData(weatherData, searchForTheCity);
-            futureData(weatherData);
+            console.log(weatherList);
+            console.log(cityData);
+            console.log(geoData[0].lat);
+            console.log(geoData[0].lon);
+            
+            
 
         })
 }
@@ -121,5 +123,4 @@ function historySaved() {
 }
 
 
-startSearch.addEventListener("click", startFunction)
-
+startbtn.addEventListener("click", startFunction)
