@@ -5,10 +5,10 @@
 var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
 var currentDay = moment().format("h:mm:ss a");
 
-var searchCity = document.getElementById("city");
+/*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
-var sectionContainer = document.getElementById("container")
+var sectionContainer = document.getElementById("container")*/
 
 
 
