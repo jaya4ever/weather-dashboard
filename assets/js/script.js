@@ -9,7 +9,22 @@ var currentDay = moment().format("h:mm:ss a");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
 var sectionContainer = document.getElementById("container")*/
+$("#citySearchBtn").on("click", function(event){
+    event.preventDefault();
 
+    cityname = $("#cityInput").val().trim();
+    if(cityname === ""){
+        alert("Please enter a city to look up")
+
+    }else if (cityList.length >= 5){  
+        cityList.shift();
+        cityList.push(cityname);
+
+    }else{
+    cityList.push(cityname);
+    }
+    
+});
 
 
 
