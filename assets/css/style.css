@@ -1,10 +1,4 @@
-body {
 
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1;
-  background: #448aff;
-}
 
 
 header {
@@ -19,23 +13,60 @@ header {
 
 
 
-.display {
-  display: block;
-  padding: 0.5rem 0 0.5rem 0;
-  margin: 0.5rem;
-  border-radius: 0.3rem;
-  background-color: lightgray;
+h1{
+  margin-top: -2rem;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
 }
 
-.currentBorder {
-  border: thin solid black;
+p, a{
+font-family: 'Montserrat', sans-serif;
 }
 
-.forecastColor {
-  background-color: rgb(56, 68, 92);
-  padding: 0.5rem;
+h3, h4, h5{
+font-family: 'Montserrat', sans-serif;
+font-weight: 600;
 }
-
-.whiteText {
+.low{
+  border-radius: 6px;
+  background-color: green;
+  padding: 5px;
   color: white;
+}
+
+.moderate{
+  border-radius: 6px;
+  background-color: yellow;
+  padding: 5px;
+  color: black;
+}
+
+.high{
+  border-radius: 6px;
+  background-color: orange;
+  padding: 5px;
+  color: black;
+}
+
+.vhigh{
+  border-radius: 6px;
+  background-color: red;
+  padding: 5px;
+  color: white;
+}
+
+.extreme{
+  border-radius: 6px;
+  background-color: violet;
+  padding: 5px;
+  color: white;
+}
+
+.searchCol{
+  height: 100vh;
+  background-color: whitesmoke;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  margin-right: -1rem;
 }
