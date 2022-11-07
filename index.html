@@ -19,39 +19,38 @@
 <body>
     <header>Weather Dashboard</header>
 
-    <main class="container">
+     <!-- Container -->
+     <div class="container-fluid">
+        <!-- Row -->
         <div class="row">
-        <section class="col-12 col-md-3 col-lg-3 my-4">
-                <div class="card custom-card mb-2">
-                    <label id="city" for="city">Search for a City:</label>
-                    <input id="city-input" type="text" name="city" placeholder="Enter any city..."class="mb-2"> 
-                    <div class="card-footer"></div>
-                    <button id="search" class="btn btn-block btn-primary">Search</button>
-                </div>
+            <!-- City Search  -->
+            <div class="col-3 searchCol">
               
-                <div id="history" class="center"></div>
-
+                <h4>Search for a city:</h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="cityInput" placeholder="Enter Any City Name" >
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="citySearchBtn">
+                            <button id="search" class="btn btn-block btn-primary">Search</button>
+                            
 
             </section>
             <div>
-                <section class="display">
-                    <!-- <div class="card w-100" > -->
-                       <h3 id="futureHeader" class="my-4">5-Day Forecast</h3>
-                           <div class="wrapper">
-                               <h3 id="city-name"></h3>
-                               <img id="current-pic" alt="" src="">
-                               <p id="temperature" class="card-text">temp</p>
-                               <p id="humidity-level" class="card-text">humidity</p>
-                               <p id="wind" class="card-text">wind</p>
-                               <p id="temperature" ></p>
-                               <p id="humidity-level"></p>
-                               <p id="wind"></p>
-                           </div>
-                       </div> -->
-                        </div> 
-                </section>
+                <section class="col-12 col-md-9 col-lg-9 my-4">
+                    <section id="currentArea" class="p-2">
+                        <h3 id="cityCurrent"></h3>
+                        <p id="currentIcon"></p>
+                        <h6 id="temp"></h6>
+                        <h6 id="wind"></h6>
+                        <h6 id="humidity"></h6>
+                        <h6 id="uv"></h6>
+                    </section>
+                          
+                       
+                      
+               
                 <section class="row" id="forecast">
-                     <!-- <h3 id="futureHeader" class="my-4">5-Day Forecast</h3> -->
+                    <h3 id="futureHeader" class="my-4"></h3> 
                     <div id="futureCity" class="d-flex justify-content-around">
 
                     </div> 

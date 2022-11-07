@@ -17,7 +17,7 @@ var sectionContainer = document.getElementById("container")
 
 
 var searchForTheCity = "";
-var historyOfTheCity = [];
+//var historyOfTheCity = [];
 
 // pulls the city array from the local storage
 // function cityList() {
@@ -90,16 +90,16 @@ function runCurrentWeather(geoData) {
 
 
 function runForecast(geoData) {
-    console.log(geoData);
+   console.log(geoData);
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=8d6fedb89a89e930cd42aacc3d71bd01`)
         .then(response => response.json())
         .then(weatherData => {
             console.log('THIS IS THE FORECAST!!!', weatherData);
 
-            console.log(weatherList);
-            console.log(cityData);
-            console.log(geoData[0].lat);
-            console.log(geoData[0].lon);
+           // console.log(weatherList);
+            //console.log(cityData);
+            //console.log(geoData[0].lat);
+            //console.log(geoData[0].lon);
             
             
 
@@ -114,7 +114,7 @@ function runForecast(geoData) {
 function historySaved() {
     historyStored.innerHTML = "";
     for (var i = 0; i < historyOfTheCity.length; i++) {
-        var savedButton = document.getElementById("search");
+        var startbtn = document.getElementById("search");
 
 
 
