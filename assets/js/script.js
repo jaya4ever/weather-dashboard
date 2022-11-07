@@ -13,7 +13,7 @@ var sectionContainer = document.getElementById("container")*/
 $("#citySearchBtn").on("click", function(event){
     event.preventDefault();
 
-    /*cityname = $("#cityInput").val().trim();
+    cityname = $("#cityInput").val().trim();
     if(cityname === ""){
         alert("Please enter a city to look up")
 
@@ -23,7 +23,7 @@ $("#citySearchBtn").on("click", function(event){
 
     }else{
     cityList.push(cityname);
-    }*/
+    }
 
     storeCurrentCity();
     storeCityArray();
@@ -142,7 +142,7 @@ async function displayWeather() {
         currentWeatherDiv.append(uvIndexEl);
         $("#weatherContainer").html(currentWeatherDiv);
 
-
+    }
         // This function runs the AJAX call for the 5 day forecast and displays them to the DOM
 async function displayFiveDayForecast() {
 
@@ -191,9 +191,16 @@ async function displayFiveDayForecast() {
 
     }
     $("#forecastContainer").html(forecastDiv);
-}}
+}
+
+function historyDisplayWeather(){
+    cityname = $(this).attr("data-name");
+    displayWeather();
+    displayFiveDayForecast();
+    console.log(cityname);
 
 
-        
+
+}     
 
 $(document).on("click", ".city", historyDisplayWeather);
