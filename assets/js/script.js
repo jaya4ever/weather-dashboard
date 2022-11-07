@@ -24,6 +24,12 @@ $("#citySearchBtn").on("click", function(event){
     }else{
     cityList.push(cityname);
     }*/
+
+    storeCurrentCity();
+    storeCityArray();
+    renderCities();
+    displayWeather();
+    displayFiveDayForecast();
     
 });
 function renderCities(){
@@ -38,8 +44,43 @@ function renderCities(){
         $("#cityList").prepend(a);
     } 
 }
+// this function pulls the city list from the local storage
+function storedCityList() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+    
+    if (storedCities !== undefined) {
+        cityList = storedCities;
+    }
+    
+    renderCities();
+    }
+    storedCityList();
 
 
+  //this function pulls the city list from the local storage to display current weather
+    function storedWeatherList() {
+        var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
+    
+        if (storedWeather !== null) {
+            cityname = storedWeather;
+    
+            displayWeather();
+            displayFiveDayForecast();
+        }
+    }
+    storedWeatherList();
+
+
+// This function saves the city array to local storage
+function storeCityArray() {
+    localStorage.setItem("cities", JSON.stringify(cityList));
+    }
+
+// This function saves the currently display city to local storage
+function storeCurrentCity() {
+
+    localStorage.setItem("currentCity", JSON.stringify(cityname));
+}
 
 
 
@@ -102,7 +143,25 @@ async function displayWeather() {
         $("#weatherContainer").html(currentWeatherDiv);
 
 
+        // This function runs the AJAX call for the 5 day forecast and displays them to the DOM
+async function displayFiveDayForecast() {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+cityname+"&units=imperial&appid=8d6fedb89a89e930cd42aacc3d71bd01";
+
+    var response = await $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      var forecastDiv = $("<div  id='fiveDayForecast'>");
+      var forecastHeader = $("<h5 class='card-header border-secondary'>").text("5 Day Forecast");
+      forecastDiv.append(forecastHeader);
+      var cardDeck = $("<div  class='card-deck'>");
+      forecastDiv.append(cardDeck);
 
 
-        $(document).on("click", ".city", historyDisplayWeather);
-}
+    }}
+    
+
+        
+
+$(document).on("click", ".city", historyDisplayWeather);
