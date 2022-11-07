@@ -17,9 +17,7 @@ header {
   padding: 3rem;
 }
 
-img {
-  max-width: 4rem;
-}
+
 
 .display {
   display: block;
@@ -40,24 +38,4 @@ img {
 
 .whiteText {
   color: white;
-}
-.wrapper p{
-
-  margin: 20px 50px;
-  margin-right: 20px;
-  text-align: left;
-  color: #04214c;
-  font-size: 23px;
-
-}
-
-.wrapper h3 span{
-
-  font-size: 26px;
-  color: #9beefb;
-}
-
-.wrapper p span{
- color: #90006e;
- font: size 25px;
 }
