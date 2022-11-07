@@ -157,10 +157,24 @@ async function displayFiveDayForecast() {
       forecastDiv.append(forecastHeader);
       var cardDeck = $("<div  class='card-deck'>");
       forecastDiv.append(cardDeck);
+       console.log(response);
+      
+      
+      
+      
+      
+      
+      
+       for (i=0; i<5;i++){
+          var forecastCard = $("<div class='card mb-3 mt-3'>");
+          var cardBody = $("<div class='card-body'>");
+          var date = new Date();
+          var val=(date.getMonth()+1)+"/"+(date.getDate()+i+1)+"/"+date.getFullYear();
+          var forecastDate = $("<h5 class='card-title'>").text(val);
 
 
-    }}
-    
+    }}}
+
 
         
 
