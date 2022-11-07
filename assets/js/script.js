@@ -4,7 +4,8 @@
 
 var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
 var currentDay = moment().format("h:mm:ss a");
-
+let cityList = [];
+let cityname;
 /*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
@@ -12,7 +13,7 @@ var sectionContainer = document.getElementById("container")*/
 $("#citySearchBtn").on("click", function(event){
     event.preventDefault();
 
-    cityname = $("#cityInput").val().trim();
+    /*cityname = $("#cityInput").val().trim();
     if(cityname === ""){
         alert("Please enter a city to look up")
 
@@ -22,9 +23,21 @@ $("#citySearchBtn").on("click", function(event){
 
     }else{
     cityList.push(cityname);
-    }
+    }*/
     
 });
+function renderCities(){
+    $("#cityList").empty();
+    $("#cityInput").val("");
+    
+    for (i=0; i<cityList.length; i++){
+        var a = $("<a>");
+        a.addClass("list-group-item list-group-item-action list-group-item-primary city");
+        a.attr("data-name", cityList[i]);
+        a.text(cityList[i]);
+        $("#cityList").prepend(a);
+    } 
+}
 
 
 
