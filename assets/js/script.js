@@ -10,6 +10,43 @@ let cityname;
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
 var sectionContainer = document.getElementById("container")*/
+
+function renderCities(){
+    $("#cityList").empty();
+    $("#cityInput").val("");
+    
+    for (i=0; i<cityList.length; i++){
+        var a = $("<a>");
+        a.addClass("list-group-item list-group-item-action list-group-item-primary city");
+        a.attr("data-name", cityList[i]);
+        a.text(cityList[i]);
+        $("#cityList").prepend(a);
+    } 
+}
+function storedCityList() {
+    var storedCities = JSON.parse(localStorage.getItem("cities"));
+    
+    if (storedCities !== undefined) {
+        cityList = storedCities;
+    }
+    
+    renderCities();
+    }
+   
+
+
+  //this function pulls the city list from the local storage to display current weather
+    function storedWeatherList() {
+        var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
+    
+        if (storedWeather !== null) {
+            cityname = storedWeather;
+    
+            displayWeather();
+            displayFiveDayForecast();
+        }
+    }
+
 $("#citySearchBtn").on("click", function(event){
     event.preventDefault();
 
@@ -32,18 +69,7 @@ $("#citySearchBtn").on("click", function(event){
     displayFiveDayForecast();
     
 });
-function renderCities(){
-    $("#cityList").empty();
-    $("#cityInput").val("");
-    
-    for (i=0; i<cityList.length; i++){
-        var a = $("<a>");
-        a.addClass("list-group-item list-group-item-action list-group-item-primary city");
-        a.attr("data-name", cityList[i]);
-        a.text(cityList[i]);
-        $("#cityList").prepend(a);
-    } 
-}
+
 // this function pulls the city list from the local storage
 function storedCityList() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));
@@ -54,7 +80,7 @@ function storedCityList() {
     
     renderCities();
     }
-    storedCityList();
+   
 
 
   //this function pulls the city list from the local storage to display current weather
@@ -68,7 +94,7 @@ function storedCityList() {
             displayFiveDayForecast();
         }
     }
-    storedWeatherList();
+   
 
 
 // This function saves the city array to local storage
@@ -204,3 +230,6 @@ function historyDisplayWeather(){
 }     
 
 $(document).on("click", ".city", historyDisplayWeather);
+
+storedCityList();
+storedWeatherList();
