@@ -72,4 +72,9 @@ async function displayWeather() {
         uvNumber.appendTo(uvIndexEl);
         currentWeatherDiv.append(uvIndexEl);
         $("#weatherContainer").html(currentWeatherDiv);
+
+
+
+
+        $(document).on("click", ".city", historyDisplayWeather);
 }
