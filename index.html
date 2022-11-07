@@ -19,34 +19,38 @@
 <body>
     <header>Weather Dashboard</header>
 
-     <!-- Container -->
-     <div class="container-fluid">
-        <!-- Row -->
-        <div class="row">
-            <!-- City Search  -->
-            <div class="col-3 searchCol">
-              
-                <h4>Search for a city:</h4>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="cityInput" placeholder="Enter Any City Name" >
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="button" id="citySearchBtn">
-                            <button id="search" class="btn btn-block btn-primary">Search</button>
-                            
+  
 
-                        </div>
+    <main class="container">
+        <div class="row">
+            <section class="col-12 col-md-3 col-lg-3 my-4">
+                <div class="card custom-card mb-2">
+                    <h3 class="card-header">Search for a City: </h3>
+                    <input id="city" type="text">
+                    <div class="card-footer">
+                        <button id="search" class="btn btn-block btn-primary">Search</button>
                     </div>
-                  
-                    <div class="list-group" id="cityList">
-                      </div>                    
                 </div>
-                <!-- Weather Information-->
-                <div class="col-9">
-                    <div class="card" style="width: 100%;" id="weatherContainer"></div>
-                      <div id="forecastContainer"></div>
-                </div>
+                <div id="storeHistory" class="center"></div>
+            </section>
+            <section class="col-12 col-md-9 col-lg-9 my-4">
+                <section id="currentArea" class="p-2">
+                    <h3 id="cityCurrent"></h3>
+                    <p id="currentIcon"></p>
+                    <h6 id="temp"></h6>
+                    <h6 id="wind"></h6>
+                    <h6 id="humidity"></h6>
+                    <h6 id="uv"></h6>
+                </section>
+                <section class="row">
+                    <h3 id="futureHeader" class=" my-4"></h3>
+                    <div id="cityFuture" class="d-flex justify-content-around"></div>
+                </section>
         </div>
-    </div>
+    </main>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
