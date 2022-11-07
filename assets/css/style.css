@@ -17,48 +17,30 @@ header {
   padding: 3rem;
 }
 
-.btn-primary {
-  background-color: green;
-
+img {
+  max-width: 4rem;
 }
 
-.card-header:first-child {
-  color: blue
-}
-#city-input{
-  padding: .5rem 0 .5rem 0;
-  text-align: center;
-  justify-content: center;
-  background: white;
-}
 .display {
   display: block;
-  padding: .5rem 0 .5rem 0;
-  text-align: center;
-  width:400px;
-  color: blue;
+  padding: 0.5rem 0 0.5rem 0;
   margin: 0.5rem;
   border-radius: 0.3rem;
-
+  background-color: lightgray;
 }
 
-.wrapper{
-  margin: 0 9rem;
-  background-color: white;
-  height: 45vh;
-  margin: 50px auto;
-  border-radius: 2px;
+.currentBorder {
+  border: thin solid black;
 }
 
-.wrapper h3{
-padding: 5px 0;
-text-align: center;
-background: blueviolet;
-color: white;
-font-family: sans-serif;
-
+.forecastColor {
+  background-color: rgb(56, 68, 92);
+  padding: 0.5rem;
 }
 
+.whiteText {
+  color: white;
+}
 .wrapper p{
 
   margin: 20px 50px;

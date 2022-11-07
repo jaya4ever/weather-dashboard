@@ -23,6 +23,9 @@ function renderCities(){
         $("#cityList").prepend(a);
     } 
 }
+
+
+
 function storedCityList() {
     var storedCities = JSON.parse(localStorage.getItem("cities"));
     
@@ -81,43 +84,18 @@ $("#citySearchBtn").on("click", function(event){
     
 });
 
-// this function pulls the city list from the local storage
-function storedCityList() {
-    var storedCities = JSON.parse(localStorage.getItem("cities"));
-    
-    if (storedCities !== undefined) {
-        cityList = storedCities;
+// Event handler for if the user hits enter after entering the city search term
+$("#cityInput").keypress(function(e){
+    if(e.which == 13){
+        $("#citySearchBtn").click();
     }
-    
-    renderCities();
-    }
-   
+})
 
 
-  //this function pulls the city list from the local storage to display current weather
-    function storedWeatherList() {
-        var storedWeather = JSON.parse(localStorage.getItem("currentCity"));
-    
-        if (storedWeather !== null) {
-            cityname = storedWeather;
-    
-            displayWeather();
-            displayFiveDayForecast();
-        }
-    }
-   
 
 
-// This function saves the city array to local storage
-function storeCityArray() {
-    localStorage.setItem("cities", JSON.stringify(cityList));
-    }
 
-// This function saves the currently display city to local storage
-function storeCurrentCity() {
 
-    localStorage.setItem("currentCity", JSON.stringify(cityname));
-}
 
 
 
