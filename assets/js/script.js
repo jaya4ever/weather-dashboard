@@ -1,6 +1,4 @@
-//look for search city
-//look for click search button
-//look for history stored after user search
+
 
 var apiKey = "bffc4134e0146aa836b4872685a56bfe";
 // GIVEN a weather dashboard with form inputs
@@ -11,7 +9,7 @@ let historyArea = document.querySelector("#storeHistory")
 let searchCity = ""
 
 let cityHistory = [];
-if (localStorage.searchedCity !== undefined) {
+if (localStorage.searchedCity !== null) {
     cityHistory = JSON.parse(localStorage.searchedCity)
 }
 saveHistory();
@@ -67,11 +65,7 @@ function fetchCityData(searchCity) {
 function pullCurrentData(cityData, searchCity) {
 
     console.log(cityData);
-    // console.log(cityData.current.weather[0].icon)
-    // console.log(cityData.current.temp);
-    // console.log(cityData.current.wind_speed);
-    // console.log(cityData.current.humidity);
-    // console.log(cityData.current.uvi);
+    
     document.querySelector("#currentArea").classList.add("currentBorder")
 
     let currentDate = moment()
@@ -110,8 +104,7 @@ function futureData(cityData) {
     // console.log(cityData.daily);
     let futureArray8 = cityData.daily;
     let futureArray = futureArray8.slice(1);
-    // console.log(futureArray.slice(1));
-    // console.log(futureArray)
+    
 
     let cardsArea = document.querySelector("#cityFuture");
     // console.log(cardsArea);
@@ -139,10 +132,7 @@ function futureData(cityData) {
         wind.textContent = "wind"
         cardContent.appendChild(wind)
 
-        // console.log(futureArray[i].dt)
-        // console.log(futureArray[i].temp.day + "℉");
-        // console.log(futureArray[i].wind_speed + " MPH");
-        // console.log(futureArray[i].humidity + " %");
+        /
 
         cardsArea.appendChild(cardContent);
 
