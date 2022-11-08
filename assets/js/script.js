@@ -45,6 +45,25 @@ function mainFunction() {
 }
 
 
+function pullCurrentData(cityData, searchCity) {
+
+    console.log(cityData);
+    // console.log(cityData.current.weather[0].icon)
+    // console.log(cityData.current.temp);
+    // console.log(cityData.current.wind_speed);
+    // console.log(cityData.current.humidity);
+    // console.log(cityData.current.uvi);
+    document.querySelector("#currentArea").classList.add("currentBorder")
+
+    let currentDate = moment()
+    let date = (currentDate.format('MMM Do YY'))
+    document.querySelector("#cityCurrent").innerText = searchCity + ", " + date;
+
+    let iconUrl = `<img src= "http://openweathermap.org/img/wn/${cityData.current.weather[0].icon}@2x.png"/>`
+}
+    // console.log(iconUrl)
+
+
 /*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
