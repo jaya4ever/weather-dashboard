@@ -3,15 +3,22 @@
 //look for history stored after user search
 
 var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
-var currentDay = moment().format("h:mm:ss a");
-let cityList = [];
-let cityname;
+let searchButton = document.querySelector("#search")
+let cityInput = document.querySelector("#city")
+let historyArea = document.querySelector("#storeHistory")
+let searchCity = ""
+
+let cityHistory = [];
+if (localStorage.searchedCity !== undefined) {
+    cityHistory = JSON.parse(localStorage.searchedCity)
+}
+saveHistory();
 /*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
 var sectionContainer = document.getElementById("container")*/
 
-function renderCities(){
+/*function renderCities(){
     $("#cityList").empty();
     $("#cityInput").val("");
     
@@ -221,4 +228,4 @@ function historyDisplayWeather(){
 $(document).on("click", ".city", historyDisplayWeather);
 
 storedCityList();
-storedWeatherList();
+storedWeatherList();*/
