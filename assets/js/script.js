@@ -13,6 +13,22 @@ if (localStorage.searchedCity !== undefined) {
     cityHistory = JSON.parse(localStorage.searchedCity)
 }
 saveHistory();
+
+
+
+
+
+
+
+searchButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    mainFunction()
+    saveHistory(cityHistory);
+})
+
+
+
+
 /*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
 var historyStored = document.getElementById("history");
