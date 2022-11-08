@@ -60,6 +60,24 @@ function pullCurrentData(cityData, searchCity) {
     document.querySelector("#cityCurrent").innerText = searchCity + ", " + date;
 
     let iconUrl = `<img src= "http://openweathermap.org/img/wn/${cityData.current.weather[0].icon}@2x.png"/>`
+
+    document.querySelector("#currentIcon").innerHTML = iconUrl
+    document.querySelector("#temp").innerText = "Temp: " + cityData.current.temp + "℉"
+    document.querySelector("#wind").innerText = "Wind: " + cityData.current.wind_speed + " MPH"
+    document.querySelector("#humidity").innerText = "Humidity: " + cityData.current.humidity + " %"
+    document.querySelector("#uv").innerText = "UV Index: "
+    let index = `<span id="uvColor" class="px-2 py-2 rounded">${cityData.current.uvi}</span>`
+    $("#uv").append(index)
+
+    // WHEN I view the UV index
+    // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+    if (cityData.current.uvi >= 0 && cityData.current.uvi <= 2) {
+        $("#uvColor").css("background-color", "green").css("color", "white");
+    } else if (cityData.current.uvi >= 2 && cityData.current.uvi <= 5) {
+        $("#uvColor").css("background-color", "yellow").css("color", "black");
+    } else {
+        $("#uvColor").css("background-color", "red").css("color", "white");
+    }
 }
     // console.log(iconUrl)
 
