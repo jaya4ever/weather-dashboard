@@ -79,6 +79,31 @@ function pullCurrentData(cityData, searchCity) {
         $("#uvColor").css("background-color", "red").css("color", "white");
     }
 }
+
+
+function futureData(cityData) {
+
+    let futureHeader = document.querySelector("#futureHeader");
+    futureHeader.innerHTML = "5-Day Forecast";
+
+    // console.log(cityData.daily);
+    let futureArray8 = cityData.daily;
+    let futureArray = futureArray8.slice(1);
+    // console.log(futureArray.slice(1));
+    // console.log(futureArray)
+
+    let cardsArea = document.querySelector("#cityFuture");
+    // console.log(cardsArea);
+    cardsArea.innerHTML = "";
+
+
+    for (let i = 0; i < 5; i++) {
+        let cardContent = document.createElement("div")
+
+
+        let iconUrl = `<img src= "http://openweathermap.org/img/wn/${futureArray[i].weather[0].icon}@2x.png"/>`
+    }
+}
     // console.log(iconUrl)
 
 
