@@ -1,5 +1,13 @@
-# weather-dashboard
-Weather Dashboard
+# weather dashboard
+
+### This is a  application for module challenge 6. I worked on this application with the help of my tutor, my team , going through GitHub and was doing practicing. I was going through the class recording, [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/JavaScript "dev.Mozilla"), [w3schools](https://www.w3schools.com/js/ "w3Schools"), asked questions in [stackoverflow](https://stackoverflow.com "stackoverflow.com"). Honestly I didn't completed this module by myself. I took lot of help. This was most challenging assignment I got so far. First I was using the basic API key which was stopped working after a while. Then I used one call API. seems like that this is also not working. I went through the code, corrected the syntax but still having issues opening the app. I am still trying. Language I have used HTML, CSS, JavaScript in this module. This is my learning stage and I am happy that I am struggling in this challenge because it will sharpen my knowledge and push me to do more. 
+
+### This is the URL of my current repository which I named weather dashboard. Weather Dashboard is the name of my GitHub repository.
+[GitHub](https://github.com/jaya4ever/weather-dashboard "GitHub Repository")
+
+### This is the GitHub Page URL of my current assignment which is weather dashboard.
+[GitHubPage]( https://jaya4ever.github.io/weather-dashboard/ "GitHub Page")
+
 
 ### User Story
 
