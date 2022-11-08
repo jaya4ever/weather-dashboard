@@ -1,33 +1,33 @@
 
-
+// one call API key
 var apiKey = "bffc4134e0146aa836b4872685a56bfe";
-// GIVEN a weather dashboard with form inputs
 
-let searchButton = document.querySelector("#search")
-let cityInput = document.querySelector("#city")
-let historyArea = document.querySelector("#storeHistory")
+// form inputs for weather
+let searchBtn = document.querySelector("#search")
+let city_Input = document.querySelector("#city")
+let storeHistory = document.querySelector("#storeHistory")
 let searchCity = ""
 
 let cityHistory = [];
-if (localStorage.searchedCity !== null) {
+if (localStorage.searchedCity !== undefined) {
     cityHistory = JSON.parse(localStorage.searchedCity)
 }
 saveHistory();
 
 // WHEN I search for a city
 // THEN I am presented with current and future conditions for that city and that city is added to the search history
-searchButton.addEventListener("click", function (event) {
+searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
     mainFunction()
     saveHistory(cityHistory);
 })
-
+// function for local storage for the cities searched
 function mainFunction() {
-    searchCity = cityInput.value
+    searchCity = city_Input.value
 
-    console.log(cityInput.value)
+    console.log(city_Input.value)
 
-    cityHistory.push(cityInput.value)
+    cityHistory.push(city_Input.value)
 
     localStorage.setItem("searchedCity", JSON.stringify(cityHistory))
     console.log(localStorage);
@@ -37,7 +37,7 @@ function mainFunction() {
     fetchCityData(searchCity)
 
 }
-
+// fetching weather data through API key
 function fetchCityData(searchCity) {
     let apiKey = "bffc4134e0146aa836b4872685a56bfe";
 
@@ -73,25 +73,15 @@ function pullCurrentData(cityData, searchCity) {
     document.querySelector("#cityCurrent").innerText = searchCity + ", " + date;
 
     let iconUrl = `<img src= "http://openweathermap.org/img/wn/${cityData.current.weather[0].icon}@2x.png"/>`
-    // console.log(iconUrl)
+  
 
     document.querySelector("#currentIcon").innerHTML = iconUrl
     document.querySelector("#temp").innerText = "Temp: " + cityData.current.temp + "℉"
     document.querySelector("#wind").innerText = "Wind: " + cityData.current.wind_speed + " MPH"
     document.querySelector("#humidity").innerText = "Humidity: " + cityData.current.humidity + " %"
-    document.querySelector("#uv").innerText = "UV Index: "
-    let index = `<span id="uvColor" class="px-2 py-2 rounded">${cityData.current.uvi}</span>`
-    $("#uv").append(index)
+    
 
-    // WHEN I view the UV index
-    // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-    if (cityData.current.uvi >= 0 && cityData.current.uvi <= 2) {
-        $("#uvColor").css("background-color", "green").css("color", "white");
-    } else if (cityData.current.uvi >= 2 && cityData.current.uvi <= 5) {
-        $("#uvColor").css("background-color", "yellow").css("color", "black");
-    } else {
-        $("#uvColor").css("background-color", "red").css("color", "white");
-    }
+    
 }
 
 // WHEN I view future weather conditions for that city
@@ -119,16 +109,16 @@ function futureData(cityData) {
         // console.log(iconUrl)
 
 
-        let temp = document.createElement("h5")
+        let temp = document.createElement("p")
         temp.textContent = futureArray[i].temp.day + "℉"
         cardContent.appendChild(temp)
         cardContent.classList.add("card");
 
-        let humidity = document.createElement("h5")
+        let humidity = document.createElement("p")
         humidity.textContent = "humidity"
         cardContent.appendChild(humidity)
 
-        let wind = document.createElement("h5")
+        let wind = document.createElement("p")
         wind.textContent = "wind"
         cardContent.appendChild(wind)
 
@@ -141,9 +131,9 @@ function futureData(cityData) {
         <div class="card custom-card forecastColor">
             <h2 class="futureDate whiteText" style="font-size: 0.9rem">${moment.unix(futureArray[i].dt).format("l")}</h2>
             <p>${iconUrl}</p>
-            <h5 class="tempFuture whiteText" style="font-size: 0.9rem">Temp: ${futureArray[i].temp.day + "℉"}</h5>
-            <h5 class="windFuture whiteText" style="font-size: 0.9rem">Wind: ${futureArray[i].wind_speed + " MPH"}</h5>
-            <h5 class="humidityFuture whiteText" style="font-size: 0.9rem">Humidity: ${futureArray[i].humidity + " %"}</h5>
+            <p class="tempFuture whiteText" style="font-size: 0.9rem">Temp: ${futureArray[i].temp.day + "℉"}</p>
+            <p class="windFuture whiteText" style="font-size: 0.9rem">Wind: ${futureArray[i].wind_speed + " MPH"}</p>
+            <p class="humidityFuture whiteText" style="font-size: 0.9rem">Humidity: ${futureArray[i].humidity + " %"}</p>
         </div>
     </div>
         `
@@ -152,7 +142,7 @@ function futureData(cityData) {
 
 // Build search history using local storage from above
 function saveHistory() {
-    historyArea.innerHTML = "";
+    storeHistory.innerHTML = "";
 
     for (let i = 0; i < cityHistory.length; i++) {
 
@@ -161,7 +151,7 @@ function saveHistory() {
         pastButton.classList.add("btn-light");
         pastButton.classList.add("col-md-11");
         pastButton.classList.add("display")
-        historyArea.prepend(pastButton);
+        storeHistory.prepend(pastButton);
 
         console.log(pastButton.textContent)
 
