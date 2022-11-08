@@ -136,6 +136,36 @@ function futureData(cityData) {
         `
     }
 }
+
+function saveHistory() {
+    historyArea.innerHTML = "";
+
+    for (let i = 0; i < cityHistory.length; i++) {
+
+        let pastButton = document.createElement("button")
+        pastButton.textContent = cityHistory[i];
+        pastButton.classList.add("btn-light");
+        pastButton.classList.add("col-md-11");
+        pastButton.classList.add("display")
+        historyArea.prepend(pastButton);
+
+        console.log(pastButton.textContent)
+
+    }
+}
+
+// console.log(cityHistory)
+
+// WHEN I click on a city in the search history
+// THEN I am again presented with current and future conditions for that city
+$(document).on("click", ".display", function () {
+    let buttonCity = $(this).text();
+    console.log(buttonCity);
+
+    fetchCityData(buttonCity)
+
+}
+)
     // console.log(iconUrl)
 
 
