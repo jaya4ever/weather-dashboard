@@ -1,18 +1,20 @@
 
-
+body{
+  background-color: lightblue;
+}
 
 header {
-  background-image: linear-gradient(to right, rgb(58, 107, 193) , rgb(37, 7, 87));
-  color: white;
+  
+ color: blue;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 600;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 img {
-max-width: 4rem;
+max-width: 3rem;
 }
 
 .display {
@@ -24,11 +26,11 @@ background-color: lightgray;
 }
 
 .currentBorder {
-border: thin solid black;
+border: thin solid blue;
 }
 
 .forecastColor {
-background-color: rgb(56, 68, 92);
+background-color: rgb(64, 121, 17);
 padding: 0.5rem;
 }
 
