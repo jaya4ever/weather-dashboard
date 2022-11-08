@@ -14,14 +14,13 @@ if (localStorage.searchedCity !== undefined) {
 }
 saveHistory();
 
-// WHEN I search for a city
-// THEN I am presented with current and future conditions for that city and that city is added to the search history
+// when searching the city from here it will show the current data of the city and also save it in the history
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
     mainFunction()
     saveHistory(cityHistory);
 })
-// function for local storage for the cities searched
+//function for local storage for the cities searched
 function mainFunction() {
     searchCity = city_Input.value
 
@@ -84,8 +83,7 @@ function pullCurrentData(cityData, searchCity) {
     
 }
 
-// WHEN I view future weather conditions for that city
-// THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
+// this function will display the 5 day forcast
 function futureData(cityData) {
 
     let futureHeader = document.querySelector("#futureHeader");
@@ -104,11 +102,11 @@ function futureData(cityData) {
     for (let i = 0; i < 5; i++) {
         let cardContent = document.createElement("div")
 
-
+      
         let iconUrl = `<img src= "http://openweathermap.org/img/wn/${futureArray[i].weather[0].icon}@2x.png"/>`
-        // console.log(iconUrl)
+       
 
-
+      // creating all the elements for temp, humidity, wind and adding styles
         let temp = document.createElement("p")
         temp.textContent = futureArray[i].temp.day + "℉"
         cardContent.appendChild(temp)
@@ -140,7 +138,7 @@ function futureData(cityData) {
     }
 }
 
-// Build search history using local storage from above
+// search history from the local history
 function saveHistory() {
     storeHistory.innerHTML = "";
 
@@ -158,10 +156,9 @@ function saveHistory() {
     }
 }
 
-// console.log(cityHistory)
 
-// WHEN I click on a city in the search history
-// THEN I am again presented with current and future conditions for that city
+
+//this code while clicking the city search history then it will present with current and future weather conditions
 $(document).on("click", ".display", function () {
     let buttonCity = $(this).text();
     console.log(buttonCity);
