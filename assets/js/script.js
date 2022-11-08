@@ -2,7 +2,7 @@
 //look for click search button
 //look for history stored after user search
 
-var apiKey = "8d6fedb89a89e930cd42aacc3d71bd01";
+var apiKey = "bffc4134e0146aa836b4872685a56bfe";
 // GIVEN a weather dashboard with form inputs
 
 let searchButton = document.querySelector("#search")
@@ -43,12 +43,12 @@ function mainFunction() {
 function fetchCityData(searchCity) {
     let apiKey = "bffc4134e0146aa836b4872685a56bfe";
 
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchCity}&appid=bffc4134e0146aa836b4872685a56bfe`)
         .then(response => response.json())
         .then(geoData => {
 
 
-            return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=${apiKey}&exclude=hourly,minutely&units=imperial`)
+            return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${geoData[0].lat}&lon=${geoData[0].lon}&appid=bffc4134e0146aa836b4872685a56bfe&exclude=hourly,minutely&units=imperial`)
         })
 
         .then(response => response.json())
