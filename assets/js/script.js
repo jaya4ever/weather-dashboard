@@ -28,6 +28,22 @@ searchButton.addEventListener("click", function (event) {
 
 
 
+function mainFunction() {
+    searchCity = cityInput.value
+
+    console.log(cityInput.value)
+
+    cityHistory.push(cityInput.value)
+
+    localStorage.setItem("searchedCity", JSON.stringify(cityHistory))
+    console.log(localStorage);
+    console.log(localStorage.searchedCity);
+    console.log(cityHistory);
+
+    fetchCityData(searchCity)
+
+}
+
 
 /*var searchCity = document.getElementById("city");
 var startbtn = document.getElementById("search");
