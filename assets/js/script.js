@@ -102,6 +102,38 @@ function futureData(cityData) {
 
 
         let iconUrl = `<img src= "http://openweathermap.org/img/wn/${futureArray[i].weather[0].icon}@2x.png"/>`
+
+        let temp = document.createElement("h5")
+        temp.textContent = futureArray[i].temp.day + "℉"
+        cardContent.appendChild(temp)
+        cardContent.classList.add("card");
+
+        let humidity = document.createElement("h5")
+        humidity.textContent = "humidity"
+        cardContent.appendChild(humidity)
+
+        let wind = document.createElement("h5")
+        wind.textContent = "wind"
+        cardContent.appendChild(wind)
+
+        // console.log(futureArray[i].dt)
+        // console.log(futureArray[i].temp.day + "℉");
+        // console.log(futureArray[i].wind_speed + " MPH");
+        // console.log(futureArray[i].humidity + " %");
+
+        cardsArea.appendChild(cardContent);
+
+        cardContent.innerHTML = `
+        <div >
+        <div class="card custom-card forecastColor">
+            <h2 class="futureDate whiteText" style="font-size: 0.9rem">${moment.unix(futureArray[i].dt).format("l")}</h2>
+            <p>${iconUrl}</p>
+            <h5 class="tempFuture whiteText" style="font-size: 0.9rem">Temp: ${futureArray[i].temp.day + "℉"}</h5>
+            <h5 class="windFuture whiteText" style="font-size: 0.9rem">Wind: ${futureArray[i].wind_speed + " MPH"}</h5>
+            <h5 class="humidityFuture whiteText" style="font-size: 0.9rem">Humidity: ${futureArray[i].humidity + " %"}</h5>
+        </div>
+    </div>
+        `
     }
 }
     // console.log(iconUrl)
