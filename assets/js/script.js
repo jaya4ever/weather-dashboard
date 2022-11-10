@@ -59,8 +59,7 @@ function fetchCityData(searchCity) {
         })
 }
 
-// WHEN I view current weather conditions for that city
-// THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+// this function will show the current city data of weather humid temp wind speed with icon
 function pullCurrentData(cityData, searchCity) {
 
     console.log(cityData);
